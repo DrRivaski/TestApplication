@@ -13,10 +13,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity(){
-    private lateinit var btn_login:Button
-    private lateinit var btn_signup:Button
-    private lateinit var btn_findpwd:Button
-
     private lateinit var binding: ActivityLoginBinding
 
     private lateinit var auth: FirebaseAuth
@@ -28,10 +24,6 @@ class LoginActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         auth = Firebase.auth;
-
-        btn_login=findViewById(R.id.login_btn)
-        btn_signup=findViewById(R.id.sign_btn)
-        btn_findpwd=findViewById(R.id.find_pwd_btn)
 
         binding.signBtn.setOnClickListener {
             val intent=Intent(this, RegisterActivity::class.java)
