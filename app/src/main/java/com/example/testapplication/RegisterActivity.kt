@@ -12,9 +12,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class RegisterActivity : AppCompatActivity(){
-    private lateinit var S_btn: Button
-    private lateinit var A_btn:Button
-
     private lateinit var binding: ActivityRegisterBinding
 
     private lateinit var auth: FirebaseAuth
@@ -37,10 +34,6 @@ class RegisterActivity : AppCompatActivity(){
 
         //var check = false
 
-
-        S_btn = findViewById(R.id.submit_btn)
-        A_btn = findViewById(R.id.Auth_button)
-
         binding.registerBtn.setOnClickListener {
             //학번이 비어있을 때 1
             if (TextUtils.isEmpty(StudentID.text.toString()))
@@ -60,7 +53,7 @@ class RegisterActivity : AppCompatActivity(){
 
             //비밀번호 확인이 비어있을 때 5
             else if (TextUtils.isEmpty(Password_check.text.toString()))
-                Toast.makeText(this, "비밀번호 확인을 입력해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show()
 
             //비밀번호가 비어있을 때
             else if (TextUtils.isEmpty(Password.text.toString()))
